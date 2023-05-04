@@ -1452,4 +1452,16 @@ config TOUCHSCREEN_RAYDIUM_CHIPSET
 
 	  If unsure, say N.
 
+config CASUARINA_TOUCHSCREEN_FTS
+	bool "FT8006P for qcom touchpanel package"
+	default I2C
+	help
+	  Say Y here if you have a FT8006P touchscreen.
+	  If unsure, say N.
+
+	  To compile this dirver as a module, choose M here: the
+	  module will be called.
+
+source "drivers/input/touchscreen/focaltech_touch_ft8006p/Kconfig"
+
 endif
