@@ -72,9 +72,10 @@ end:
 static void mdss_dsi_panel_bklt_pwm(struct mdss_dsi_ctrl_pdata *ctrl, int level)
 {
 	int ret;
+	int ret_reg = 0;
 	u32 duty;
 	u32 period_ns;
-
+	struct regulator *reg;
 	if (ctrl->pwm_bl == NULL) {
 		pr_err("%s: no PWM\n", __func__);
 		return;
@@ -90,6 +91,19 @@ static void mdss_dsi_panel_bklt_pwm(struct mdss_dsi_ctrl_pdata *ctrl, int level)
 			pwm_disable(ctrl->pwm_bl);
 		}
 		ctrl->pwm_enabled = 0;
+		reg = regulator_get(NULL,"lcdb_ldo");
+		if(reg)
+			{
+			ret_reg = regulator_disable(reg);
+			regulator_put(reg);
+			}
+
+		reg = regulator_get(NULL,"lcdb_ncp");
+		if(reg)
+			{
+			ret_reg = regulator_disable(reg);
+			regulator_put(reg);
+			}
 		return;
 	}
 
