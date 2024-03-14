@@ -2629,6 +2629,7 @@ static struct snd_soc_dai_link msm8952_dai[] = {
 		.ops = &msm8952_quin_mi2s_be_ops,
 		.ignore_suspend = 1,
 	},
+#if 0
 	/* Proxy Tx BACK END DAI Link */
 	{
 		.name = LPASS_BE_PROXY_TX,
@@ -2656,6 +2657,7 @@ static struct snd_soc_dai_link msm8952_dai[] = {
 		.ignore_pmdown_time = 1,
 		.ignore_suspend = 1,
 	},
+#endif
 };
 static struct snd_soc_dai_link msm8952_hdmi_dba_dai_link[] = {
 	{
