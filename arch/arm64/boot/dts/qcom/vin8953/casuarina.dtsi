@@ -9,6 +9,5 @@
 	};
 };
 
-#include "casuarina-audio.dtsi"
 #include "casuarina-battery.dtsi"
 #include "casuarina-camera_pie.dtsi"

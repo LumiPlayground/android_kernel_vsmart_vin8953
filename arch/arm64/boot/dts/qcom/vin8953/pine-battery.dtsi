@@ -1,0 +1,8 @@
+/ {
+	/delete-node/ qcom,battery-data;
+
+	mtp_batterydata: qcom,battery-data {
+		qcom,batt-id-range-pct = <15>;
+        #include "qg-batterydata-V420-4450mah-10k.dtsi"
+	};
+};

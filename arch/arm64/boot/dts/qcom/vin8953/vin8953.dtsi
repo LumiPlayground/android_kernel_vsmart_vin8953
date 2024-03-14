@@ -1,3 +1,4 @@
+#include "vin8953-audio.dtsi"
 #include "vin8953-general.dtsi"
 #include "vin8953-mdss.dtsi"
 #include "vin8953-pinctrl.dtsi"

@@ -85,17 +85,6 @@
 	};
 };
 
-/*
-&tlmm {
-	/delete-node/ pri-tlmm-ws-lines;
-
-	pri-tlmm-ws-lines {
-		pri_tlmm_ws_act: pri_tlmm_ws_act {};
-		pri_tlmm_ws_sus: pri_tlmm_ws_sus {};
-	};
-};
-*/
-
 &wsa881x_analog_vi_gpio {
 	/delete-property/ pinctrl-0;
 	/delete-property/ pinctrl-1;

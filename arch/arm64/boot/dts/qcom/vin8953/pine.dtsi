@@ -1,0 +1,2 @@
+#include "pine-battery.dtsi"
+#include "pine-camera_pie.dtsi"

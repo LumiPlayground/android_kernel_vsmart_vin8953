@@ -676,6 +676,7 @@ endif
 dtb-$(CONFIG_ARCH_SDM845_VM) += sdm845-vm.dtb
 else
 dtb-$(CONFIG_ARCH_SDM632) += sdm632-casuarina.dtb
+dtb-$(CONFIG_ARCH_SDM450) += sdm450-pine.dtb
 endif
 
 always		:= $(dtb-y)
