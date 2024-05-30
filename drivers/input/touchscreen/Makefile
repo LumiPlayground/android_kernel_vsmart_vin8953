@@ -108,6 +108,7 @@ obj-$(CONFIG_TOUCHSCREEN_HIMAX_CHIPSET)	+= hxchipset/
 obj-$(CONFIG_TOUCHSCREEN_EKTF3XXX_CHIPSET) += ektf3xxx/
 obj-$(CONFIG_TOUCHSCREEN_RAYDIUM_CHIPSET)  += raydium_wt030/
 obj-$(CONFIG_CASUARINA_TOUCHSCREEN_FTS)          += focaltech_touch_ft8006p/
+obj-$(CONFIG_TOUCHSCREEN_FTS_VIN8937)          += FT6336U/
 obj-$(CONFIG_TOUCHSCREEN_CHIPONE_V420A) += 	chipone-tddi/
 ####### fsensor
 obj-$(CONFIG_CHIPONE_FINGERPRINT) += fpsensor/

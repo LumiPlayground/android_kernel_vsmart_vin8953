@@ -1453,6 +1453,18 @@ config TOUCHSCREEN_RAYDIUM_CHIPSET
 
 	  If unsure, say N.
 
+config TOUCHSCREEN_FTS_VIN8937
+	bool "FT6336U for qcom touchpanel package"
+	default I2C
+	help
+	  Say Y here if you have a FT6336U touchscreen.
+	  If unsure, say N.
+
+	  To compile this dirver as a module, choose M here: the
+	  module will be called.
+
+source "drivers/input/touchscreen/FT6336U/Kconfig"
+
 config CASUARINA_TOUCHSCREEN_FTS
 	bool "FT8006P for qcom touchpanel package"
 	default I2C
