@@ -39,7 +39,6 @@
 
 	firmware: firmware {
 		android {
-			boot_devices = "soc/7824900.sdhci";
 			compatible = "android,firmware";
 			vbmeta {
 				compatible = "android,vbmeta";
@@ -54,7 +53,7 @@
 					type = "ext4";
 					mnt_flags = "ro,barrier=1,discard";
 					fsmgr_flags = "wait,avb";
-					status = "disabled";
+					status = "ok";
 				};
 
 			};
