@@ -413,6 +413,10 @@ config CHARGER_BQ2415X
 	  You'll need this driver to charge batteries on e.g. Nokia
 	  RX-51/N900.
 
+config CHARGER_FAN54015
+	tristate "54015 battery charger driver"
+        depends on I2C
+
 config CHARGER_BQ24190
 	tristate "TI BQ24190 battery charger driver"
 	depends on I2C
