@@ -1,0 +1,10 @@
+/ {
+	/delete-node/ qcom,batterydata;
+
+	qrd_batterydata: qcom,batterydata {
+		qcom,rpull-up-kohm = <100>;
+		qcom,vref-batt-therm = <1800000>;
+
+        #include "q2153-batterydata-300mAh.dtsi"
+	};
+};

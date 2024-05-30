@@ -1,0 +1,4 @@
+#include "sugarcane-battery.dtsi"
+#include "sugarcane-camera_pie.dtsi"
+#include "sugarcane-pinctrl.dtsi"
+#include "sugarcane-regulator.dtsi"

@@ -1,0 +1,39 @@
+&cam_sensor_rear_vdig {
+	mux {
+		pins = "gpio41";
+	};
+
+	config {
+		pins = "gpio41";
+	};
+};
+
+&cam_sensor_rear_vdig_sleep {
+	mux {
+		pins = "gpio41";
+	};
+
+	config {
+		pins = "gpio41";
+	};
+};
+
+&cam_sensor_front_default {
+	mux {
+		pins = "gpio38","gpio35";
+	};
+
+	config {
+		pins = "gpio38","gpio35";
+	};
+};
+
+&cam_sensor_front_sleep {
+	mux {
+		pins = "gpio38","gpio35";
+	};
+
+	config {
+		pins = "gpio38","gpio35";
+	};
+};

@@ -1,0 +1,6 @@
+&pm8916_chg {
+	qcom,ibatmax-warm-ma = <450>;
+	qcom,ibatmax-cool-ma = <450>;
+	qcom,batt-hot-percentage = <35>;
+	qcom,batt-cold-percentage = <70>;
+};

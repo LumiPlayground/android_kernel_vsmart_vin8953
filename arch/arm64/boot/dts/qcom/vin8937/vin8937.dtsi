@@ -1,0 +1,2 @@
+#include "vin8937-audio.dtsi"
+#include "vin8937-battery.dtsi"

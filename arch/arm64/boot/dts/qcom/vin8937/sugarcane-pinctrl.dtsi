@@ -1,0 +1,26 @@
+&pm8916_gpios {
+   usb_id_default: usb_id_default {
+       pins = "gpio4";
+       function = "normal";
+       input-enable;
+       bias-pull-up;
+       power-source = <0>;
+   };
+};
+
+&tlmm {
+    tlmm_pmi_flash_led {
+        /delete-node/ front_flash_led_enable;
+        /delete-node/ front_flash_led_disable;
+    };
+};
+
+&usb_otg {
+    interrupts = <0 134 0>, <0 140 0>;
+    interrupt-names = "core_irq", "async_irq";
+
+    qcom,usbid-gpio = <&pm8916_gpios 4 0>;
+    pinctrl-names = "default";
+    pinctrl-0 = <&usb_id_default>;
+};
+
