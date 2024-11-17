@@ -675,6 +675,9 @@ endif
 
 dtb-$(CONFIG_ARCH_SDM845_VM) += sdm845-vm.dtb
 else
+dtbo-$(CONFIG_ARCH_SDM632) += casuarina-qrd-sku4-overlay.dtbo
+casuarina-qrd-sku4-overlay.dtbo-base := sdm632-casuarina.dtb
+
 dtb-$(CONFIG_ARCH_SDM632) += sdm632-casuarina.dtb
 endif
 

@@ -1,5 +1,4 @@
 #include "casuarina-audio.dtsi"
-#include "casuarina-camera_pie.dtsi"
 
 &soc {
 	qcom,board_id {

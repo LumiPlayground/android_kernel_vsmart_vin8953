@@ -28,6 +28,10 @@
 #include "dsi-panel-boent51021-1200p-video.dtsi"
 #include "dsi-panel-hx8394d-wxga-video.dtsi"
 #include "dsi-panel-inxnt51021-1200p-video.dtsi"
+#include "vin8953/dsi-panel-icnl9911-hd-video-holitek.dtsi"
+#include "vin8953/dsi-panel-ft8006p-hlt-1600-video.dtsi"
+#include "vin8953/dsi-panel-ft8006p-truly-1600-video.dtsi"
+#include "vin8953/dsi-panel-icnl9911s-byd-1600-video.dtsi"
 
 &soc {
 	dsi_panel_pwr_supply: dsi_panel_pwr_supply {
@@ -102,6 +106,54 @@
 	qcom,mdss-dsi-panel-on-check-value = <0x1c>;
 	qcom,mdss-dsi-panel-status-read-length = <1>;
 	qcom,mdss-dsi-panel-max-error-count = <3>;
+};
+
+&dsi_icnl9911_hd_video_holitek {
+    qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_pwm";
+    qcom,mdss-dsi-bl-pmic-pwm-frequency = <100>;
+    qcom,mdss-dsi-bl-pwm-pmi;
+    pwms = <&pmi632_pwm 3 1000000>;
+    qcom,mdss-dsi-pwm-gpio = <&pmi632_gpios 6 0>;
+    pinctrl-names = "default";
+    pinctrl-0 = <&pwm_out_default>;
+    qcom,panel-supply-entries = <&dsi_panel_pwr_supply>;
+    qcom,mdss-dsi-panel-timings-phy-v2 = [
+        1e 1c 04 06 02 03 04 a0
+        1e 1c 04 06 02 03 04 a0
+        1e 1c 04 06 02 03 04 a0
+        1e 1c 04 06 02 03 04 a0
+        1e 0e 04 05 02 03 04 a0];
+};
+
+&dsi_ft8006p_hlt_1600_video {
+	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_pwm";
+	qcom,mdss-dsi-bl-pmic-pwm-frequency = <100>;
+	qcom,mdss-dsi-bl-pwm-pmi;
+	pwms = <&pmi632_pwm 3 1000000>;
+	qcom,mdss-dsi-pwm-gpio = <&pmi632_gpios 6 0>;
+	pinctrl-names = "default";
+	pinctrl-0 = <&pwm_out_default>;
+	qcom,panel-supply-entries = <&dsi_panel_pwr_supply>;
+};
+
+&dsi_ft8006p_truly_1600_video {
+	qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_pwm";
+	qcom,mdss-dsi-bl-pmic-pwm-frequency = <100>;
+	qcom,mdss-dsi-bl-pwm-pmi;
+	pwms = <&pmi632_pwm 3 1000000>;
+	qcom,mdss-dsi-pwm-gpio = <&pmi632_gpios 6 0>;
+	pinctrl-names = "default";
+	pinctrl-0 = <&pwm_out_default>;
+	qcom,panel-supply-entries = <&dsi_panel_pwr_supply>;
+};
+
+&dsi_icnl9911s_byd_1600_video {
+	qcom,mdss-dsi-bl-pwm-pmi;
+	pwms = <&pmi632_pwm 3 1000000>;
+	qcom,mdss-dsi-pwm-gpio = <&pmi632_gpios 6 0>;
+	pinctrl-names = "default";
+	pinctrl-0 = <&pwm_out_default>;
+	qcom,panel-supply-entries = <&dsi_panel_pwr_supply>;
 };
 
 &dsi_r69006_1080p_video {

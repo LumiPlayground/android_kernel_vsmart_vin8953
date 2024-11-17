@@ -1,0 +1,74 @@
+&mdss_mdp {
+    dsi_icnl9911s_byd_1600_video: qcom,mdss_dsi_icnl9911s_byd_1600_video {
+		qcom,mdss-dsi-panel-controller = <&mdss_dsi0>;
+		qcom,mdss-dsi-panel-name = "icnl9911s byd 1600 videodsi panel";
+		qcom,mdss-dsi-panel-type = "dsi_video_mode";
+		qcom,mdss-dsi-panel-destination = "display_1";
+		qcom,mdss-dsi-panel-framerate = <60>;
+		qcom,mdss-dsi-virtual-channel-id = <0>;
+		qcom,mdss-dsi-stream = <0>;
+		qcom,mdss-dsi-panel-width = <720>;
+		qcom,mdss-dsi-panel-height = <1600>;
+		qcom,mdss-dsi-h-front-porch = <300>;
+		qcom,mdss-dsi-h-back-porch = <60>;
+		qcom,mdss-dsi-h-pulse-width = <10>;
+		qcom,mdss-dsi-h-sync-skew = <0>;
+		qcom,mdss-dsi-v-back-porch = <12>;
+		qcom,mdss-dsi-v-front-porch = <124>;
+		qcom,mdss-dsi-v-pulse-width = <4>;
+		qcom,mdss-dsi-h-left-border = <0>;
+		qcom,mdss-dsi-h-right-border = <0>;
+		qcom,mdss-dsi-v-top-border = <0>;
+		qcom,mdss-dsi-v-bottom-border = <0>;
+		qcom,mdss-dsi-bpp = <24>;
+		qcom,mdss-dsi-color-order = "rgb_swap_rgb";
+		qcom,mdss-dsi-underflow-color = <0xff>;
+		qcom,mdss-dsi-border-color = <0>;
+		qcom,mdss-dsi-off-command = [
+			29 01 00 00 00 00 02 26 08 
+      05 01 00 00 32 00 02 28 00 
+      05 01 00 00 78 00 02 10 00];
+		qcom,mdss-dsi-off-ges-command = [
+      29 01 00 00 00 00 03 f0 5a 
+      59 29 01 00 00 00 00 03 f1 
+      a5 a6 29 01 00 00 00 00 02 cc 01];
+		qcom,mdss-dsi-on-command = <0x29010000 0x3f0 0x5a592901 0x00 0x3f1a5a6 0x29010000 0x1fb0 0x82810504 0x87868485 0x66663333 0x20010178 0x1010f05 0x4030201 0x2030400 0x2901 0x00 0x1eb11142 0x86000101 0x1660101 0x4085400 0x4440 0x2014002 0x1400201 0x40020129 0x1000000 0x12b254 0xc4820540 0x2014002 0x1050554 0xc0c0d0b 0x29010000 0x20b3 0x2000000 0x262691 0xa2334400 0x26001801 0x2082030 0x8094420 0x40204008 0x9223329 0x1000000 0x1db40a 0x2dc1d00 0x2020202 0x12100202 0xe0c0403 0x3030303 0x3fffffc 0x29 0x1000000 0x1db50b 0x2dc1d00 0x2020202 0x13110202 0xf0d0503 0x3030303 0x3fffffc 0x29 0x1000000 0x19b800 0x00 0x00 0x00 0x00 0x00 0x29 0x1000000 0xebb01 0x509110d 0x191d1525 0x69002125 0x29010000 0xfbc 0x00 0x220ff00 0x3330173 0x44002901 0x00 0xbbd5312 0x4fcf72a7 0x844ae15 0x29010000 0xbbe 0x65655046 0xc664306 0xe0e2901 0x00 0x9bf0725 0x7257f00 0x11042901 0x00 0xac010ff 0xffffffff 0xff0029 0x1000000 0x14c1c0 0xc207c04 0xc10042a 0x40360007 0xcfffffc0 0xc02901 0x00 0x2c20029 0x1000000 0xac306 0xff00ff 0x8101 0x29010000 0xcc5 0x31cc0c0 0x40104244 0x8091429 0x1000000 0xbc687 0x962a2929 0x317f3408 0x4290100 0x17 0xc7f7b78e 0x704221f1 0x4615efc9 0x9df7cbad 0x856b461a 0x7ec00029 0x1000000 0x17c8f7 0xb78e7042 0x21f14615 0xefc99df7 0xcbad856b 0x461a7ec0 0x290100 0x02 0xcb002901 0x00 0x6d0800d 0xff0f6329 0x1000000 0x2d242 0x29010000 0x3f1 0x5a592901 0x00 0x3f0a5a6 0x29010000 0x235 0x290100 0x780002 0x11002901 0x1400 0x2290029 0x1000000 0x22601>; //todo reverse value fully
+		qcom,mdss-dsi-on-command-state = "dsi_lp_mode";
+		qcom,mdss-dsi-off-command-state = "dsi_hs_mode";
+		qcom,mdss-dsi-off-ges-command-state = "dsi_lp_mode";
+		qcom,mdss-dsi-panel-timings-phy-v2 = [
+    21 1e 06 07 04 02 04 a0
+		21 1e 06 07 04 02 04 a0
+		21 1e 06 07 04 02 04 a0
+		21 1e 06 07 04 02 04 a0
+		21 15 06 07 04 02 04 a0
+		];
+		qcom,mdss-dsi-t-clk-post = <0x0a>;
+		qcom,mdss-dsi-t-clk-pre = <0x28>;
+		qcom,mdss-dsi-h-sync-pulse = <1>;
+		qcom,mdss-dsi-traffic-mode = "burst_mode";
+		qcom,mdss-dsi-lane-map = "lane_map_0123";
+		qcom,mdss-dsi-bllp-eof-power-mode;
+		qcom,mdss-dsi-bllp-power-mode;
+		qcom,mdss-dsi-bl-pmic-control-type = "bl_ctrl_pwm";
+		qcom,mdss-dsi-bl-pmic-pwm-frequency = <100>;
+		qcom,mdss-dsi-bl-pmic-bank-select = <0>;
+		qcom,mdss-dsi-bl-min-level = <1>;
+		qcom,mdss-dsi-bl-max-level = <255>;
+		qcom,mdss-dsi-dma-trigger = "trigger_sw";
+		qcom,mdss-dsi-mdp-trigger = "none";
+		qcom,mdss-dsi-tx-eot-append;
+		qcom,mdss-dsi-lane-0-state;
+		qcom,mdss-dsi-lane-1-state;
+		qcom,mdss-dsi-lane-2-state;
+		qcom,mdss-dsi-lane-3-state;
+		qcom,mdss-dsi-reset-sequence = <1 5>, <0 5>, <1 30>;
+		qcom,mdss-dsi-hfp-power-mode;
+		qcom,esd-check-enabled;
+		qcom,mdss-dsi-te-check-enable;
+		qcom,mdss-dsi-panel-status-check-mode = "te_signal_check";
+		qcom,mdss-dsi-lp11-init;
+		qcom,suspend-ulps-enabled;
+		qcom,mdss-dsi-post-init-delay = <2>;
+	};
+};
