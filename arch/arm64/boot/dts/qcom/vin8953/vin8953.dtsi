@@ -1,0 +1,80 @@
+/ {
+	reserved-memory {
+		pstore: ramoops@91400000 {
+			compatible = "ramoops";
+			reg = <0 0x91400000 0 0x100000>;
+			ecc-size = <0x10>;
+			console-size = <0x80000>;
+			record-size = <0x40000>;
+			ftrace-size = <0x20000>;
+			pmsg-size = <0x20000>;
+		};
+	};
+};
+
+&other_ext_mem {
+	reg = <0x0 0x84A00000 0x0 0x1e00000>;
+};
+
+&qcom_seecom {
+	reg = <0x84A00000 0x1900000>;
+};
+
+&adsp_shmem_device_mem {
+	/delete-property/ label;
+};
+
+&mdss_dsi0_pll {
+	qcom,ssc-frequency-hz = <30000>;
+	qcom,ssc-ppm = <5000>;
+};
+
+&mdss_dsi1_pll {
+	qcom,ssc-frequency-hz = <30000>;
+	qcom,ssc-ppm = <5000>;
+};
+
+&i2c_3 {
+	status = "ok";
+}
+
+&pmi632_charger {
+};
+
+&pm8953_l6 {
+	regulator-always-on;
+};
+
+&pm8953_l10 {
+	regulator-always-on;
+};
+
+&soc {
+	/delete-node/ qcom,adsp;
+
+	pinctrl@1000000 {
+		/delete-node/ wsa_reset;
+	};
+};
+
+&thermal_zones {
+	quiet-therm-step {
+		trips {
+			/delete-node/ quiet_batt-trip1;
+			/delete-node/ quiet_batt-trip2;
+			/delete-node/ quiet_batt-trip3;
+			/delete-node/ quiet_batt-trip4;
+
+			quiet_modem-trip2 {
+				temperature = <58000>;
+			};
+		};
+
+		cooling-maps {
+			/delete-node/ battery_lvl1;
+			/delete-node/ battery_lvl2;
+			/delete-node/ battery_lvl3;
+			/delete-node/ battery_lvl4;
+		};
+	};
+};
