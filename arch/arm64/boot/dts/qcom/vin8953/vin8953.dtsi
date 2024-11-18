@@ -47,8 +47,6 @@
 };
 
 &soc {
-	/delete-node/ qcom,adsp;
-
 	pinctrl@1000000 {
 		/delete-node/ wsa_reset;
 	};
