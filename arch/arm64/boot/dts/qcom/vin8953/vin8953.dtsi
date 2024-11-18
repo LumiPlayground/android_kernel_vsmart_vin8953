@@ -38,9 +38,6 @@
 	status = "ok";
 }
 
-&pmi632_charger {
-};
-
 &pm8953_l6 {
 	regulator-always-on;
 };
