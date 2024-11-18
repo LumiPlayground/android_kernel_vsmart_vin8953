@@ -36,7 +36,7 @@
 
 &i2c_3 {
 	status = "ok";
-}
+};
 
 &pm8953_l6 {
 	regulator-always-on;
