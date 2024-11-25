@@ -18,8 +18,6 @@
 
 #include "fpsensor_spi_tee.h"
 #include "fpsensor_wakelock.h"
-#define FPSENSOR_FB_DRM         1
-#define FPSENSOR_FB_OLD         2
 
 #define FPSENSOR_WAKEUP_SOURCE  1
 #define FPSENSOR_WAKEUP_OLD     2
@@ -28,24 +26,12 @@
 #define FPSENSOR_USE_QCOM_POWER_GPIO     0
 #define FPSENSOR_WAKEUP_TYPE              FPSENSOR_WAKEUP_SOURCE
 #define FP_NOTIFY                         1
-#define FP_NOTIFY_TYPE                    FPSENSOR_FB_DRM
 
-#if FP_NOTIFY
-#if FP_NOTIFY_TYPE == FPSENSOR_FB_DRM
-#include <linux/msm_drm_notify.h>
-#define FP_NOTIFY_ON                            MSM_DRM_BLANK_UNBLANK
-#define FP_NOTIFY_OFF                           MSM_DRM_BLANK_POWERDOWN
-#define FP_NOTIFY_EVENT_BLANK                   MSM_DRM_EARLY_EVENT_BLANK    //MSM_DRM_EVENT_BLANK
-#define fpsensor_fb_register_client(client)     msm_drm_register_client(client);
-#define fpsensor_fb_unregister_client(client)   msm_drm_unregister_client(client);
-#else
 #define FP_NOTIFY_ON                            FB_BLANK_UNBLANK
 #define FP_NOTIFY_OFF                           FB_BLANK_POWERDOWN
 #define FP_NOTIFY_EVENT_BLANK                   FB_EVENT_BLANK
 #define fpsensor_fb_register_client(client)     fb_register_client(client);
 #define fpsensor_fb_unregister_client(client)   fb_unregister_client(client)
-#endif
-#endif
 
 /* debug log setting */
 static u8 fpsensor_debug_level = INFO_LOG;
