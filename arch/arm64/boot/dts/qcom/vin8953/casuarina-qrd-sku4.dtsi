@@ -272,10 +272,6 @@
 #include "casuarina-qrd-sku4-camera.dtsi"
 #include "casuarina-camera-sensor-qrd.dtsi"
 
-&quiet_therm_default {
-	pins = "gpio1";
-};
-
 &pmi632_vadc {
 	chan@2a {
 		qcom,scale-function = <22>;
@@ -283,124 +279,6 @@
 
 	chan@4a {
 		qcom,scale-function = <22>;
-	};
-
-	chan@52 {
-		label = "quiet_therm";
-	};
-
-	chan@53 {
-		label = "No_therm";
-	};
-};
-
-&pmi632_adc_tm {
-	chan@53 {
-		reg = <0x52>;
-	};
-};
-
-&thermal_zones {
-	vsm-pcb-therm-adc {
-		polling-delay-passive = <0>;
-		polling-delay = <0>;
-		thermal-sensors = <&pmi632_adc_tm 0x52>;
-		thermal-governor = "user_space";
-
-		trips {
-			active-config0 {
-				temperature = <0xfde8>;
-				hysteresis = <0x3e8>;
-				type = "passive";
-			};
-		};
-	};
-
-	quiet-therm-adc {
-		thermal-sensors = <&pmi632_adc_tm 0x52>;
-	};
-
-	quiet-therm-step {
-		polling-delay-passive = <2000>;
-		polling-delay = <0>;
-		thermal-sensors = <&pmi632_adc_tm 0x52>;
-		thermal-governor = "step_wise";
-		status = "ok";
-
-		trips {
-			quiet_cpus_trip: quiet_cpus-trip {
-				temperature = <43000>;
-				hysteresis = <0>;
-				type = "passive";
-			};
-			quiet_modem_trip0: quiet_modem-trip0 {
-				temperature = <45000>;
-				hysteresis = <2000>;
-				type = "passive";
-			};
-			quiet_modem_trip1: quiet_modem-trip1 {
-				temperature = <48000>;
-				hysteresis = <3000>;
-				type = "passive";
-			};
-			quiet_modem_trip2: quiet_modem-trip2 {
-				temperature = <58000>;
-				hysteresis = <4000>;
-				type = "passive";
-			};
-		};
-
-		cooling-maps {
-			skin_cpu0 {
-				trip = <&quiet_cpus_trip>;
-				/* throttle from fmax to 1689600KHz */
-				cooling-device = <&CPU0 THERMAL_NO_LIMIT 3>;
-			};
-			skin_cpu1 {
-				trip = <&quiet_cpus_trip>;
-				cooling-device = <&CPU1 THERMAL_NO_LIMIT 3>;
-			};
-			skin_cpu2 {
-				trip = <&quiet_cpus_trip>;
-				cooling-device = <&CPU2 THERMAL_NO_LIMIT 3>;
-			};
-			skin_cpu3 {
-				trip = <&quiet_cpus_trip>;
-				cooling-device = <&CPU3 THERMAL_NO_LIMIT 3>;
-			};
-			skin_cpu4 {
-				trip = <&quiet_cpus_trip>;
-				cooling-device = <&CPU4 THERMAL_NO_LIMIT 3>;
-			};
-			skin_cpu5 {
-				trip = <&quiet_cpus_trip>;
-				cooling-device = <&CPU5 THERMAL_NO_LIMIT 3>;
-			};
-			skin_cpu6 {
-				trip = <&quiet_cpus_trip>;
-				cooling-device = <&CPU6 THERMAL_NO_LIMIT 3>;
-			};
-			skin_cpu7 {
-				trip = <&quiet_cpus_trip>;
-				cooling-device = <&CPU7 THERMAL_NO_LIMIT 3>;
-			};
-			modem_lvl1 {
-				trip = <&quiet_modem_trip1>;
-				cooling-device = <&modem_pa 2 2>;
-			};
-			modem_lvl2 {
-				trip = <&quiet_modem_trip2>;
-				cooling-device = <&modem_pa 3 3>;
-			};
-			modem_proc_lvl1 {
-				trip = <&quiet_modem_trip0>;
-				cooling-device = <&modem_proc 1 1>;
-			};
-			modem_proc_lvl2 {
-				trip = <&quiet_modem_trip2>;
-				cooling-device = <&modem_proc 3 3>;
-			};
-		};
 	};
 };
 
